@@ -8,7 +8,7 @@ TARGETS := $(shell ls scripts)
 	@mv .dapper.tmp .dapper
 
 $(TARGETS): .dapper
-	./.dapper $@
+	./.dapper --build-arg ARCH=arm64 $@ 
 
 trash: .dapper
 	./.dapper -m bind trash
